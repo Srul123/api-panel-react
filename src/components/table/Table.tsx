@@ -12,7 +12,16 @@ const Table: React.FC<Props> = ({ tableData }) => {
   const { urlParams, queryParams, headers, body } = tableData;
   return (
     <div id="table" style={{ background: "white" }}>
-      <TableHeader />
+      <TableHeader
+        col1Title="NAME"
+        col1Space={"30%"}
+        col2Title="Pll"
+        col2Space={"10%"}
+        col3Title="MASKING"
+        col3Space={"35%"}
+        col4Title="TYPE"
+        col4Space={"25%"}
+      />
       <div className="rows">
         {urlParams && urlParams.length > 0 && (
           <Row title="URL Params" items={urlParams} />

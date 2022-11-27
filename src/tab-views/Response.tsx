@@ -14,12 +14,10 @@ const Response: React.FC = () => {
 
   const onSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    if (textInput !== "") {
-      dispatch({
-        type: AppTypes.ResponseFilterByNameOrType,
-        payload: textInput,
-      });
-    }
+    dispatch({
+      type: AppTypes.ResponseFilterByNameOrType,
+      payload: textInput,
+    });
     if (isPllSelected) {
       dispatch({
         type: AppTypes.ResponseFilterByPll,

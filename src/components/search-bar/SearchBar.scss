@@ -1,7 +1,7 @@
 #form-search {
   div#search-panel {
     background: white;
-    height: 4vh;
+    height: 5vh;
     display: flex;
     box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
     #input-wrapper {
@@ -25,7 +25,7 @@
       justify-content: center;
       display: flex;
       border-left: 1px solid lightgray;
-      height: 2vh;
+      height: 2.5vh;
       position: relative;
       top: 25%;
       input {
@@ -61,7 +61,7 @@
       button {
         border: transparent;
         color: blueviolet;
-        font-weight: 500;
+        font-weight: 600;
         cursor: pointer;
         background-color: #f5f5f5;
       }

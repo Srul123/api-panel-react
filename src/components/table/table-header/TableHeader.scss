@@ -1,0 +1,16 @@
+#table-header {
+    margin-top: 3vh;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    height: 5vh;
+    color: blueviolet;
+    font-size: 0.8em;
+    font-weight: bold;
+    .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        left: 2vw;
+    }
+}

@@ -174,7 +174,7 @@ function filterByNameOrType(
   filterBy: string
 ) {
   const filteredArray = data[category].filter(
-    (item) => item.name === filterBy || item.type === filterBy
+    (item) => item.name.includes(filterBy) || item.type.includes(filterBy)
   );
   return filteredArray;
 }
@@ -183,3 +183,4 @@ function filterByPll(data: ApiUrlData, category: category, filterBy: boolean) {
   const filteredArray = data[category].filter((item) => item.pii === filterBy);
   return filteredArray;
 }
+

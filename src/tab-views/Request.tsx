@@ -14,16 +14,23 @@ const Request: React.FC = () => {
 
   const onSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    if (textInput !== "") {
-      dispatch({
-        type: AppTypes.RequestFilterByNameOrType,
-        payload: textInput,
-      });
-    }
+    dispatch({
+      type: AppTypes.RequestFilterByNameOrType,
+      payload: textInput,
+    });
     if (isPllSelected) {
       dispatch({
         type: AppTypes.RequestFilterByPll,
         payload: true,
+      });
+    } else {
+      dispatch({
+        type: AppTypes.RequestFilterByPll,
+        payload: true,
+      });
+      dispatch({
+        type: AppTypes.RequestFilterByNameOrType,
+        payload: textInput,
       });
     }
   };

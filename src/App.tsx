@@ -8,13 +8,14 @@ import { AppTypes } from "./global-state/reducer";
 import LoaderSpinner from "./components/layouts/loader-spinner/LoaderSpinner";
 const mockData = require("./assets/fe_data.json");
 
+const tabs = [
+  { id: "1", tabTitle: "Request", tabContent: Request },
+  { id: "2", tabTitle: "Response", tabContent: Response },
+];
+
 const App: React.FC = () => {
   const { dispatch } = React.useContext(AppContext);
   const [isLoading, setIsLoading] = React.useState(true);
-  const tabs = [
-    { id: "1", tabTitle: "Request", tabContent: Request },
-    { id: "2", tabTitle: "Response", tabContent: Response },
-  ];
 
   React.useEffect(() => {
     dispatch({

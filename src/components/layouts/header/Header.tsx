@@ -17,11 +17,17 @@ const Header: React.FC = () => {
       </div>
       <div>
         <h3>
-          {`All APIs `} <FontAwesomeIcon style={{fontSize:"0.5em"}} icon={faChevronRight} />{" "}
-          <span>{`${data.api}`}</span>
-          {" "}<FontAwesomeIcon style={{fontSize:"0.5em"}} icon={faChevronRight} />
-          {" "}<span id="path">{`${data.path}`}</span>
-         
+          {`All APIs `}{" "}
+          <FontAwesomeIcon
+            style={{ fontSize: "0.5em" }}
+            icon={faChevronRight}
+          />{" "}
+          <span>{`${data.api}`}</span>{" "}
+          <FontAwesomeIcon
+            style={{ fontSize: "0.5em" }}
+            icon={faChevronRight}
+          />{" "}
+          <span id="path">{`${data.path.slice(1, data.path.length)}`}</span>
         </h3>
       </div>
     </header>

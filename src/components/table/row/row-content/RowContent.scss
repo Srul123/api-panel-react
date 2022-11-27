@@ -1,0 +1,62 @@
+#RowContent {
+  display: flex;
+  height: 7vh;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.2);
+  margin: 1vh 2vw;
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin-right: 1vw;
+    span {
+      height: 3vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 8vw;
+      font-weight: bold;
+      font-size: 0.8em;
+    }
+  }
+  .col-1 {
+    span {
+      font-weight: 500;
+      margin-left: 2vw;
+    }
+  }
+  .col-2 {
+    .active-true {
+      background: darkblue;
+      color: white;
+      text-align: center;
+    }
+    .active-false {
+      background: transparent;
+      border: 1px solid darkblue;
+      color: darkblue;
+      text-align: center;
+    }
+  }
+  .col-3 {
+    .active-true {
+      background: blueviolet;
+      color: white;
+      text-align: center;
+    }
+    .active-false {
+      background: transparent;
+      border: 1px solid blueviolet;
+      color: blueviolet;
+      text-align: center;
+    }
+  }
+  .col-4 {
+    span {
+      text-align: center;
+      text-transform: uppercase;
+      background: lightskyblue;
+      color: darkslategrey;
+    }
+  }
+}
