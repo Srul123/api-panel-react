@@ -33,7 +33,7 @@ const Tabs: React.FC<Props> = ({ tabList }) => {
   ));
 
   return (
-    <div className="tabs">
+    <div id="tabs">
       <ul className="tabs-titles">{listTitles}</ul>
       <div className="tab-content">{listContent}</div>
     </div>

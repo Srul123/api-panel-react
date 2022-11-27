@@ -1,9 +1,25 @@
 #Header {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid lightgray;
+  margin: 1vh 2vw;
   div {
     h1 {
       #http-method {
         text-transform: uppercase;
+        color: palevioletred;
+        font-size: 0.7em;
+        margin-right: 1vw;
+      }
+      span {
+        color: blueviolet;
+      }
+    }
+  }
+  div {
+    h3 {
+      color: blueviolet;
+      font-weight: bolder;
+      span#path {
+        font-weight: 400;
       }
     }
   }

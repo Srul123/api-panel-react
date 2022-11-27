@@ -1,6 +1,6 @@
 import React from "react";
-import { Item } from "../../interfaces/DTO.types";
-import RowContent from "./RowContent";
+import { Item } from "../../../interfaces/DTO.types";
+import RowContent from "./row-content/RowContent";
 
 interface Props {
   title: string;

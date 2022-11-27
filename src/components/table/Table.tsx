@@ -1,6 +1,8 @@
 import React from "react";
 import { ApiUrlData } from "../../interfaces/DTO.types";
-import Row from "./Row";
+import Row from "./row/Row";
+import TableHeader from "./table-header/TableHeader";
+import "./Table.scss";
 
 interface Props {
   tableData: ApiUrlData;
@@ -9,22 +11,9 @@ interface Props {
 const Table: React.FC<Props> = ({ tableData }) => {
   const { urlParams, queryParams, headers, body } = tableData;
   return (
-    <div style={{ background: "white" }}>
-      <div style={{ display: "flex", borderBottom: "1px solid gray" }}>
-        <div style={{ flex: "30%" }}>
-          <span>NAME</span>
-        </div>
-        <div style={{ flex: "10%" }}>
-          <span>Pll</span>
-        </div>
-        <div style={{ flex: "40%" }}>
-          <span>MASKING</span>
-        </div>
-        <div style={{ flex: "40%" }}>
-          <span>TYPE</span>
-        </div>
-      </div>
-      <div>
+    <div id="table" style={{ background: "white" }}>
+      <TableHeader />
+      <div className="rows">
         {urlParams && urlParams.length > 0 && (
           <Row title="URL Params" items={urlParams} />
         )}

@@ -1,37 +1,46 @@
 import React from "react";
-import { AppContext } from "../../global-state/context";
-import { AppTypes } from "../../global-state/reducer";
-import { ApiUrlData } from "../../interfaces/DTO.types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./SearchBar.scss";
 
 interface Props {
-  requestFiltered: ApiUrlData;
+  handleOnSubmit: (event: { preventDefault: () => void }) => void;
+  handleResetFilters: () => void;
+  textSearchInput: string;
+  setTextSearchInput: React.Dispatch<React.SetStateAction<string>>;
+  isPllSelected: boolean;
+  setIsPllSelected: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const SearchBar: React.FC<Props> = ({ requestFiltered }) => {
-  const [textInput, setTextInput] = React.useState("");
-  const [isPllSelected, setIsPllSelected] = React.useState(false);
-  const { dispatch } = React.useContext(AppContext);
-
-  const onSubmit = (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-    console.log("onSubmit");
-    console.log(textInput);
-    console.log(requestFiltered);
-    dispatch({
-      type: AppTypes.RequestFilterByNameOrType,
-      payload: textInput,
-    });
-  };
-
+const SearchBar: React.FC<Props> = ({
+  handleOnSubmit,
+  handleResetFilters,
+  textSearchInput,
+  setTextSearchInput,
+  isPllSelected,
+  setIsPllSelected,
+}) => {
   return (
-    <form id="form-search" onSubmit={(event) => onSubmit(event)}>
+    <form id="form-search" onSubmit={handleOnSubmit}>
       <div id="search-panel">
         <div id="input-wrapper">
-          <input type={"text"} placeholder="Search" onChange={(event)=> setTextInput(event.target.value)} />
+          <span className="icon-search-wrapper">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </span>
+          <input
+            type={"text"}
+            placeholder="Search"
+            value={textSearchInput}
+            onChange={(event) => setTextSearchInput(event.target.value)}
+          />
         </div>
         <div id="checkbox-wrapper">
-          <input type={"checkbox"} name="checkbox" onClick={()=> setIsPllSelected(!isPllSelected)} />
+          <input
+            type={"checkbox"}
+            name="checkbox"
+            checked={isPllSelected}
+            onChange={(event) => setIsPllSelected(!isPllSelected)}
+          />
           <label htmlFor="checkbox"> Show Pll only</label>
         </div>
         <div id="submit-wrapper">
@@ -39,7 +48,9 @@ const SearchBar: React.FC<Props> = ({ requestFiltered }) => {
         </div>
       </div>
       <div>
-        <button> Reset Filter</button>
+        <div className="reset-button-wrapper">
+          <button onClick={handleResetFilters}> Reset Filter</button>
+        </div>
       </div>
     </form>
   );

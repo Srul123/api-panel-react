@@ -1,8 +1,11 @@
-.tabs {
+#tabs {
+  margin-top: 2vh;
   .tabs-titles {
     list-style: none;
     padding: 0px;
     margin: 0;
+    position: relative;
+    left: 2vw;
   }
 
   .tab-title {
@@ -12,6 +15,7 @@
     color: grey;
     cursor: pointer;
     margin-left: 1px;
+    font-weight: bolder;
   }
 
   .tab-title--active {
@@ -21,7 +25,7 @@
 
   .tab-content {
     background-color: #f5f5f5;
-    padding: 5px;
+    padding: 2vw;
     margin: 0;
   }
 }

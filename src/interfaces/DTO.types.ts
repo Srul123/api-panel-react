@@ -17,7 +17,7 @@ export type ApiUrlData = {
 
 export interface Item {
   name: string;
-  pil: boolean;
+  pii: boolean;
   masked: boolean;
   type: string;
 }
