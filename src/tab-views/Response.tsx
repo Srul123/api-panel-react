@@ -38,7 +38,7 @@ const Response: React.FC = () => {
   const onPiiClick = (isActive: boolean) => {
     dispatch({
       type: AppTypes.ResponseFilterByPll,
-      payload: true,
+      payload: isActive,
     });
     setIsPllSelected(isActive);
   };
