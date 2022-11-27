@@ -1,9 +1,9 @@
 import React, { createContext, useReducer, Dispatch } from "react";
-import { ApiUrlData, Data } from "../interfaces/DTO.types";
+import { ApiUrlData, DataDto } from "../interfaces/DTO.types";
 import { AppActions, appReducer } from "./reducer";
 
 export interface State {
-  data: Data;
+  data: DataDto;
   requestDataByFilters: ApiUrlData;
   responseDataByFilters: ApiUrlData;
 }

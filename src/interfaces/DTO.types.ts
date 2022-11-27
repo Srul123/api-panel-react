@@ -1,4 +1,5 @@
-export interface Data {
+/* Data Transfer Objects*/
+export interface DataDto {
     api: httpMethod;
     method: string;
     path: string;

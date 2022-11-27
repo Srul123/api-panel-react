@@ -1,4 +1,4 @@
-import { ApiUrlData, Data, Item } from "../interfaces/DTO.types";
+import { ApiUrlData, DataDto, Item } from "../interfaces/DTO.types";
 import { State } from "./context";
 
 type ActionMap<M extends { [index: string]: any }> = {
@@ -23,7 +23,7 @@ export enum AppTypes {
 }
 
 type AppPayload = {
-  [AppTypes.SetData]: Data;
+  [AppTypes.SetData]: DataDto;
   [AppTypes.RequestFilterByNameOrType]: string;
   [AppTypes.ResponseFilterByNameOrType]: string;
   [AppTypes.RequestFilterByPll]: boolean;
