@@ -15,7 +15,7 @@
             { 
                 "name": "page",
                 "pii": false,
-                "masked": false,
+                "masked": true,
                 "type": "integer"
             },
             { 

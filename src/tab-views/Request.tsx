@@ -14,9 +14,10 @@ const Request: React.FC = () => {
 
   const onSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
+    const input = textInput.toLocaleLowerCase();
     dispatch({
       type: AppTypes.RequestFilterByNameOrType,
-      payload: textInput,
+      payload: input,
     });
     if (isPllSelected) {
       dispatch({
@@ -30,7 +31,7 @@ const Request: React.FC = () => {
       });
       dispatch({
         type: AppTypes.RequestFilterByNameOrType,
-        payload: textInput,
+        payload: input,
       });
     }
   };
