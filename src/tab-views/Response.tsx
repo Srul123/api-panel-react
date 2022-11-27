@@ -23,6 +23,15 @@ const Response: React.FC = () => {
         type: AppTypes.ResponseFilterByPll,
         payload: true,
       });
+    } else {
+      dispatch({
+        type: AppTypes.RequestFilterByPll,
+        payload: true,
+      });
+      dispatch({
+        type: AppTypes.RequestFilterByNameOrType,
+        payload: textInput,
+      });
     }
   };
 
