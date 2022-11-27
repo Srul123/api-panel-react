@@ -35,11 +35,12 @@ const Response: React.FC = () => {
     }
   };
 
-  const onPiiClick = () => {
+  const onPiiClick = (isActive: boolean) => {
     dispatch({
       type: AppTypes.ResponseFilterByPll,
       payload: true,
     });
+    setIsPllSelected(isActive);
   };
 
   const onReset = () => {

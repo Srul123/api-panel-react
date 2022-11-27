@@ -37,7 +37,7 @@ const RowContent: React.FC<Props> = ({
           <div className="column col-3" style={{ flex: col3Space }}>
             <span
               className={item.masked ? "active-true" : "active-false"}
-              onClick={() => onPiiClick(item.masked)}
+              onClick={() => onPiiClick(item.pii)}
             >
               MASKED
             </span>

@@ -41,6 +41,9 @@ const Request: React.FC = () => {
       type: AppTypes.RequestFilterByPll,
       payload: isActive,
     });
+    console.log(isActive);
+    
+    setIsPllSelected(isActive);
   }
 
   const onReset = () => {
