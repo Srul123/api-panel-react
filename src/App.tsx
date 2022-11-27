@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/layouts/header/Header";
+import Tabs from "./components/tabs/Tabs";
+import Request from "./tab-views/Request";
+import Response from "./tab-views/Response";
+import { AppContext } from "./global-state/context";
+import { AppTypes } from "./global-state/reducer";
+const mockData = require("./assets/fe_data.json");
 
-function App() {
+const App: React.FC = () => {
+  const { dispatch } = React.useContext(AppContext);
+
+  const tabs = [
+    { id: "1", tabTitle: "Request", tabContent: Request },
+    { id: "2", tabTitle: "Response", tabContent: Response },
+  ];
+
+  React.useEffect(() => {
+    dispatch({
+      type: AppTypes.SetData,
+      payload: mockData,
+    });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Tabs tabList={tabs} />
     </div>
   );
-}
+};
 
 export default App;

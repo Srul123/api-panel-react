@@ -1,0 +1,36 @@
+#form-search {
+  div#search-panel {
+    background: white;
+    height: 4vh;
+    display: flex;
+    #input-wrapper {
+      flex: 70%;
+      input {
+        width: 100%;
+      }
+    }
+    #checkbox-wrapper {
+      flex: 15%;
+      justify-content: center;
+      display: flex;
+      label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        white-space: nowrap;
+      }
+    }
+    #submit-wrapper {
+      flex: 15%;
+      button {
+        width: 100%;
+      }
+    }
+  }
+  div {
+    display: flex;
+    justify-content: end;
+    button {
+    }
+  }
+}
