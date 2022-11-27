@@ -10,8 +10,9 @@ import "./Row.scss";
 interface Props {
   title: string;
   items: Item[];
+  onPiiClick: (isActive: boolean) => void;
 }
-const Row: React.FC<Props> = ({ title, items }) => {
+const Row: React.FC<Props> = ({ title, items, onPiiClick }) => {
   const [showRowContent, setShowRowContent] = React.useState(false);
 
   return (
@@ -34,6 +35,7 @@ const Row: React.FC<Props> = ({ title, items }) => {
           col2Space={"10%"}
           col3Space={"35%"}
           col4Space={"25%"}
+          onPiiClick={onPiiClick}
         />
       )}
     </div>

@@ -35,6 +35,13 @@ const Response: React.FC = () => {
     }
   };
 
+  const onPiiClick = () => {
+    dispatch({
+      type: AppTypes.ResponseFilterByPll,
+      payload: true,
+    });
+  };
+
   const onReset = () => {
     setIsPllSelected(false);
     setTextInput("");
@@ -62,7 +69,7 @@ const Response: React.FC = () => {
         setIsPllSelected={setIsPllSelected}
       />
       {checkForEmptyResults(response)}
-      <Table tableData={response} />
+      <Table tableData={response} onPiiClick={onPiiClick} />
     </div>
   );
 };

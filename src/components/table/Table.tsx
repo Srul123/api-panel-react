@@ -6,9 +6,10 @@ import "./Table.scss";
 
 interface Props {
   tableData: ApiUrlData;
+  onPiiClick: (isActive: boolean) => void;
 }
 
-const Table: React.FC<Props> = ({ tableData }) => {
+const Table: React.FC<Props> = ({ tableData, onPiiClick }) => {
   const { urlParams, queryParams, headers, body } = tableData;
   return (
     <div id="table" style={{ background: "white" }}>
@@ -24,15 +25,15 @@ const Table: React.FC<Props> = ({ tableData }) => {
       />
       <div className="rows">
         {urlParams && urlParams.length > 0 && (
-          <Row title="URL Params" items={urlParams} />
+          <Row title="URL Params" items={urlParams} onPiiClick={onPiiClick} />
         )}
         {queryParams && queryParams.length > 0 && (
-          <Row title="Query Params" items={queryParams} />
+          <Row title="Query Params" items={queryParams} onPiiClick={onPiiClick} />
         )}
         {headers && headers.length > 0 && (
-          <Row title="Headers" items={headers} />
+          <Row title="Headers" items={headers} onPiiClick={onPiiClick} />
         )}
-        {body && body.length > 0 && <Row title="Body" items={body} />}
+        {body && body.length > 0 && <Row title="Body" items={body} onPiiClick={onPiiClick} />}
       </div>
     </div>
   );

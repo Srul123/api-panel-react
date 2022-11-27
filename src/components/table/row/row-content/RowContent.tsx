@@ -8,6 +8,7 @@ interface Props {
   col2Space: string;
   col3Space: string;
   col4Space: string;
+  onPiiClick: (isActive: boolean) => void;
 }
 
 const RowContent: React.FC<Props> = ({
@@ -16,6 +17,7 @@ const RowContent: React.FC<Props> = ({
   col2Space,
   col3Space,
   col4Space,
+  onPiiClick,
 }) => {
   return (
     <>
@@ -25,12 +27,18 @@ const RowContent: React.FC<Props> = ({
             <span>{item.name}</span>
           </div>
           <div className="column col-2" style={{ flex: col2Space }}>
-            <span className={item.pii ? "active-true" : "active-false"}>
+            <span
+              className={item.pii ? "active-true" : "active-false"}
+              onClick={() => onPiiClick(item.pii)}
+            >
               PII
             </span>
           </div>
           <div className="column col-3" style={{ flex: col3Space }}>
-            <span className={item.pii ? "active-true" : "active-false"}>
+            <span
+              className={item.pii ? "active-true" : "active-false"}
+              onClick={() => onPiiClick(item.pii)}
+            >
               MASKED
             </span>
           </div>

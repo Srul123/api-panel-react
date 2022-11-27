@@ -35,6 +35,13 @@ const Request: React.FC = () => {
     }
   };
 
+  const onPiiClick = (isActive: boolean) => {
+    dispatch({
+      type: AppTypes.RequestFilterByPll,
+      payload: isActive,
+    });
+  }
+
   const onReset = () => {
     setTextInput("");
     setIsPllSelected(false);
@@ -67,7 +74,7 @@ const Request: React.FC = () => {
         setIsPllSelected={setIsPllSelected}
       />
       {checkForEmptyResults(request)}
-      <Table tableData={request} />
+      <Table tableData={request} onPiiClick={onPiiClick} />
     </div>
   );
 };
