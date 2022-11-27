@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/layouts/header/Header";
-import Tabs from "./components/tabs/Tabs";
+import TabsPanel from "./components/tabs-panel/TabsPanel";
 import Request from "./tab-views/Request";
 import Response from "./tab-views/Response";
 import { AppContext } from "./global-state/context";
@@ -32,7 +32,7 @@ const App: React.FC = () => {
       ) : (
         <>
           <Header />
-          <Tabs tabList={tabs} />
+          <TabsPanel tabList={tabs} />
         </>
       )}
     </div>

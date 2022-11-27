@@ -1,5 +1,5 @@
 import React from "react";
-import "./Tabs.scss";
+import "./TabsPanel.scss";
 
 
 interface Tab {
@@ -10,7 +10,7 @@ interface Tab {
 interface Props {
   tabList: Tab[];
 }
-const Tabs: React.FC<Props> = ({ tabList }) => {
+const TabsPanel: React.FC<Props> = ({ tabList }) => {
 
   const [visibleTab, setVisibleTab] = React.useState(tabList[0].id);
 
@@ -33,11 +33,11 @@ const Tabs: React.FC<Props> = ({ tabList }) => {
   ));
 
   return (
-    <div id="tabs">
+    <div id="TabsPanel">
       <ul className="tabs-titles">{listTitles}</ul>
       <div className="tab-content">{listContent}</div>
     </div>
   );
 };
 
-export default Tabs;
+export default TabsPanel;
