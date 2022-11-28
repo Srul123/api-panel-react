@@ -1,7 +1,6 @@
 # Project technologies: React 18 with TypeScript 
 
 
-# Instructions:
 
 ## Clone repo:
     git clone https://github.com/Srul123/api-panel-react.git
