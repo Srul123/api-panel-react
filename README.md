@@ -1,4 +1,5 @@
 # Project technologies: React 18 with TypeScript 
+![image](https://user-images.githubusercontent.com/31043411/204223676-4e2c2a58-f75e-49f3-82d4-403bb5611d51.png)
 
 
 
